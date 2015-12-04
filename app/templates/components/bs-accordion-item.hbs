@@ -1,0 +1,14 @@
+{{! overriden bs-accordion-item from ember-bootstrap }}
+{{! see http://kaliber5.github.io/ember-bootstrap/api/classes/Components.AccordionItem.html }}
+
+<div role="tab" {{action "toggleActive"}} class="panel-heading {{if collapsed "collapsed"}}">
+    <h4 class="panel-title">
+        {{yield 'header'}}
+    </h4>
+</div>
+
+{{#bs-collapse collapsed=collapsed class="panel-collapse"}}
+    <div class="panel-body">
+        {{yield 'body'}}
+    </div>
+{{/bs-collapse}}
