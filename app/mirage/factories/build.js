@@ -5,10 +5,5 @@ export default Mirage.Factory.extend({
 
   title: faker.company.companyName,
   description: faker.lorem.paragraph,
-
-  project_id: null,
-  commit: null,
-  jobs: () => [],
-
   number: (i) => i
 });

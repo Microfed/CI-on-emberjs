@@ -96,7 +96,7 @@ export default function () {
   });
 
   this.get('builds', function (db, request) {
-    var projectId = request.params.project_id;
+    var projectId = request.queryParams.project_id;
 
     return {
       data: db.builds.where({ project_id: projectId }).map(attrs => ({

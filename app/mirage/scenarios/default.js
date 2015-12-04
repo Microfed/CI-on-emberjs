@@ -1,5 +1,5 @@
 export default function (server) {
-  let project = server.create('project');
+  let project = server.create('project', { id: '85c593fe-4999-49e8-854f-db81da4ad67c' });
   let commits = server.createList('commit', 20, { project_id: project.id });
   let builds = commits.map((commit) => server.create('build', { project_id: project.id, commit_id: commit.id }));
   let jobs = builds.map((build) =>
