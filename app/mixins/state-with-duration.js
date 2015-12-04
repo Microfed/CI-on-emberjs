@@ -3,7 +3,7 @@ import DS from 'ember-data';
 
 let { computed } = Ember;
 
-const PENDING_STATE = 'pending';
+//const PENDING_STATE = 'pending';
 const RUNNING_STATE = 'running';
 const PASSED_STATE = 'passed';
 const FAILED_STATE = 'failed';

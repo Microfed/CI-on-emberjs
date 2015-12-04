@@ -2,7 +2,7 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('commit', 'Unit | Model | commit', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:build']
 });
 
 test('it exists', function(assert) {
