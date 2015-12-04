@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
 
   // These comments are here to help you get started. Feel free to delete them.
 
@@ -72,6 +72,42 @@ export default function() {
     });
 
   */
+
+  this.get('projects', function (db) {
+    return {
+      data: db.projects.map(attrs => ({
+        type: 'project',
+        id: attrs.id,
+        attributes: attrs
+      }))
+    };
+  });
+
+  this.get('projects/:id', function (db, request) {
+    var projectId = request.params.id;
+
+    return {
+      data: {
+        type: 'project',
+        id: projectId,
+        attributes: db.projects.find(projectId)
+      }
+    }
+  });
+
+  this.get('builds', function (db, request) {
+    var projectId = request.params.project_id;
+
+    return {
+      data: db.builds.where({ project_id: projectId }).map(attrs => ({
+        type: 'build',
+        id: attrs.id,
+        attributes: attrs
+      }))
+    };
+  });
+
+  this.get('builds/:id');
 }
 
 /*
