@@ -92,7 +92,7 @@ export default function () {
         id: projectId,
         attributes: db.projects.find(projectId)
       }
-    }
+    };
   });
 
   this.get('builds', function (db, request) {
