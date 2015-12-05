@@ -1,21 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        {{#bs-accordion selected=selected}}
-            {{#each model as |build index|}}
-                {{#bs-accordion-item value=index as |section|}}
-                    {{#if (eq section 'header')}}
-                        {{builds-list-item build=build}}
-                    {{/if}}
-                    {{#if (eq section 'body')}}
-                        {{builds-list-item build=build}}
-                    {{/if}}
-                {{/bs-accordion-item}}
-            {{else}}
-                {{#bs-accordion-item value=0}}
-                    <h3>{{t 'project.builds.empty-builds-list'}}</h3>
-                {{/bs-accordion-item}}
-            {{/each}}
-        {{/bs-accordion}}
+        {{builds-list builds=model}}
     </div>
 </div>
 
