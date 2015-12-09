@@ -28,5 +28,28 @@ export default Ember.Service.extend({
     build: JOB_BUILD,
     unit_test: JOB_UNIT_TEST,
     func_test: JOB_FUNC_TEST
+  },
+
+  getStateString: function (state) {
+    let string;
+
+    switch (state) {
+    case this.states.pending:
+      string = 'pending';
+      break;
+    case this.states.running:
+      string = 'running';
+      break;
+    case this.states.passed:
+      string = 'passed';
+      break;
+    case this.states.failed:
+      string = 'failed';
+      break;
+    default:
+      string = '';
+    }
+
+    return string;
   }
 });

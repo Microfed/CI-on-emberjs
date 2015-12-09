@@ -7,5 +7,6 @@ export default Mirage.Factory.extend({
   description: faker.lorem.paragraph,
   number: (i) => i,
   'commit-sha': faker.random.uuid,
-  'commit-committer-name': faker.name.findName
+  'commit-committer-name': faker.name.findName,
+  state: () => Math.round(Math.random() * 4) - 1 // from 0 to 3
 });

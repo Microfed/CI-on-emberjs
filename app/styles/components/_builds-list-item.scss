@@ -1,0 +1,22 @@
+.builds-list-item {
+	$pending-color: #f8ac59;
+	$running-color: #1c84c6;
+	$passed-color: #1ab394;
+	$failed-color: #ed5565;
+
+	&.pending {
+		border-left-color: $pending-color;
+	}
+
+	&.running {
+		border-left-color: $running-color;
+	}
+
+	&.passed {
+		border-left-color: $passed-color;
+	}
+
+	&.failed {
+		border-left-color: $failed-color;
+	}
+}

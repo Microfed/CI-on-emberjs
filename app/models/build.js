@@ -7,7 +7,7 @@ let cp = Ember.computed;
 export default DS.Model.extend(StateWithDuration, {
   project: DS.belongsTo('project', { async: true }),
   commit: DS.belongsTo('commit', { async: true }),
-  jobs: DS.hasMany('job'),
+  jobs: DS.hasMany('job', { async: false }),
 
   number: DS.attr(),
 

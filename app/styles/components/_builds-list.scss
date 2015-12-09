@@ -1,0 +1,63 @@
+@import "../grid";
+
+.builds-list {
+	$container-border-color: #e3e3e6;
+	$item-border-color: #e3e3e6;
+	$border-left-default-color: #d2d2d2;
+
+	border: $container-border-color 2px solid;
+
+	.panel {
+		@include panel-variant($item-border-color, #000000, #ffffff, $item-border-color);
+		border-radius: 0;
+		margin-bottom: 0;
+		border: none;
+		border-bottom: $item-border-color 1px solid;
+		border-left: $border-left-default-color 8px solid;
+	}
+
+	.panel-group .panel + .panel {
+		margin-top: 0;
+	}
+
+	.header {
+		text-align: center;
+		font-weight: bold;
+		//border-bottom: $item-border-color 1px solid;
+
+	}
+
+	.build-col-changelist {
+		@include make-lg-column(8);
+	}
+
+	.build-col-owner {
+		@include make-lg-column(3);
+	}
+
+	.build-col-time {
+		@include make-lg-column(12);
+	}
+
+	.build-col-build {
+		@include make-lg-column(7);
+	}
+
+	.build-col-unit {
+		@include make-lg-column(9);
+	}
+
+	.build-col-func {
+		@include make-lg-column(9);
+	}
+
+	.build-col-status {
+		@include make-lg-column(5);
+	}
+}
+
+// TODO: move to the builds route styles
+.builds-container {
+	@include make-lg-column($grid-columns);
+	padding-left: 14px;
+}
