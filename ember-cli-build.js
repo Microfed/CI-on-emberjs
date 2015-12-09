@@ -6,6 +6,12 @@ module.exports = function (defaults) {
   var app = new EmberApp(defaults, {
     'ember-cli-bootstrap-sassy': {
       'js': false
+    },
+
+    'ember-bootstrap': {
+      'importBootstrapCSS': false,
+      'importBootstrapFont': false,
+      'importBootstrapTheme': false
     }
   });
 
