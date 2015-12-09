@@ -1,0 +1,9 @@
+{{#each model as |project|}}
+    <ul>
+        <li>
+            {{#link-to 'project' project.id}}{{project.title}}{{/link-to}}
+        </li>
+    </ul>
+{{/each}}
+
+{{outlet}}

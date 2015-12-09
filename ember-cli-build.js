@@ -2,9 +2,21 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    'ember-cli-bootstrap-sassy': {
+      'js': false
+    },
+
+    'ember-bootstrap': {
+      'importBootstrapCSS': false,
+      'importBootstrapFont': false,
+      'importBootstrapTheme': false
+    },
+
+    emberCliFontAwesome: {
+      useScss: true
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

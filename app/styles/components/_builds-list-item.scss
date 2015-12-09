@@ -1,0 +1,93 @@
+.builds-list-item {
+	$states: (
+			pending: #f8ac59,
+			running: #1c84c6,
+			passed: #1ab394,
+			failed: #ed5565
+	);
+
+	$states-icons: (
+			pending: 'spinner',
+			running: 'refresh',
+			passed: 'check-circle-o',
+			failed: 'times-circle-o'
+	);
+
+	$text-color: #7c7c7c;
+	$row-height: 63px;
+
+	&.pending {
+		border-left-color: map-get($states, pending);
+	}
+
+	&.running {
+		border-left-color: map-get($states, running);
+	}
+
+	&.passed {
+		border-left-color: map-get($states, passed);
+	}
+
+	&.failed {
+		border-left-color: map-get($states, failed);
+	}
+
+	.build-col {
+		text-align: left;
+		line-height: $row-height;
+		color: $text-color;
+
+		.changelist {
+			font-weight: bolder;
+		}
+	}
+
+	.build-item-short {
+		padding: 0;
+		cursor: pointer;
+
+		.build-col-changelist {
+			padding-left: 8px;
+		}
+
+		.build-col-time {
+			font-size: smaller;
+		}
+
+		.build-col-status {
+			font-size: smaller;
+		}
+
+		.build-col-time, .build-col-owner {
+			font-size: xx-small;
+		}
+
+		.build-col-status {
+			// pixel perfect
+			padding-left: 9px;
+		}
+
+		@each $state, $name in $states-icons {
+			.icon-state-#{$state} {
+				@extend .fa-#{$name};
+
+				color: map-get($states, #{$state});
+			}
+		}
+	}
+
+	@each $state, $color in $states {
+		&.#{$state} {
+			.state-title {
+				color: $color;
+			}
+		}
+	}
+
+	.build-list-item-properties {
+		@include make-row();
+
+		min-height: $row-height;
+		margin: 0;
+	}
+}

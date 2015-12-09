@@ -1,0 +1,55 @@
+{{yield}}
+
+<div class="panel header">
+    <div class="panel-body">
+        <div class="row">
+            <div class="build-col build-col-spacer"></div>
+
+            <div class="build-col-changelist">
+                {{t 'builds-list.header.changelist'}}
+            </div>
+
+            <div class="build-col-owner">
+                {{t 'builds-list.header.owner'}}
+            </div>
+
+            <div class="build-col build-col-big-spacer"></div>
+
+            <div class="build-col-time">
+                {{t 'builds-list.header.time-started'}}
+            </div>
+
+            <div class="build-col build-col-spacer"></div>
+
+            <div class="build-col-build">
+                {{t 'builds-list.header.build'}}
+            </div>
+
+            <div class="build-col-unit">
+                {{t 'builds-list.header.unit-test'}}
+            </div>
+
+            <div class="build-col build-col-spacer"></div>
+
+            <div class="build-col-func">
+                {{t 'builds-list.header.functional-test'}}
+            </div>
+
+            <div class="build-col build-col-little-spacer"></div>
+
+            <div class="build-col-status">
+                {{t 'builds-list.header.status'}}
+            </div>
+        </div>
+    </div>
+</div>
+{{#if builds.length}}
+    {{#bs-accordion selected=selected}}
+        {{#each attrs.builds as |build index|}}
+            {{builds-list-item value=index build=build}}
+        {{/each}}
+    {{/bs-accordion}}
+{{else}}
+    <h3>{{t 'builds-list.no-builds'}}</h3>
+{{/if}}
+

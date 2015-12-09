@@ -1,0 +1,37 @@
+<div class="build-list-item-properties">
+    <div class="build-col build-col-spacer"></div>
+
+    <div class="build-col build-col-changelist">
+        {{attrs.build.changelist}}
+    </div>
+
+    <div class="build-col build-col-owner">
+        {{attrs.build.owner}}
+    </div>
+
+    <div class="build-col build-col-big-spacer"></div>
+
+    <div class="build-col build-col-time">
+        {{moment-format attrs.build.startedAt 'MM / DD / YYYY'}}
+        &nbsp;
+        {{fa-icon 'clock-o'}}
+        {{moment-format attrs.build.startedAt 'hh:mm a'}}
+    </div>
+
+    <div class="build-col build-col-spacer"></div>
+
+    <div class="build-col build-col-progress">
+        {{progress-with-steps progress=buildProgress}}
+    </div>
+
+    <div class="build-col build-col-little-spacer"></div>
+
+    <div class="build-col build-col-status">
+        {{fa-icon spin=attrs.isInActiveState class=(concat 'icon-state-' attrs.buildState)}}
+        <span class="state-title">
+            {{state-title attrs.build.state}}
+        </span>
+    </div>
+</div>
+
+{{yield}}
