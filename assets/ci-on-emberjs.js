@@ -793,7 +793,7 @@ define('ci-on-emberjs/mirage/config', ['exports'], function (exports) {
       });
      */
 
-    this.get('projects', function (db) {
+    this.get('/projects', function (db) {
       return {
         data: db.projects.map(function (attrs) {
           return {
@@ -805,7 +805,7 @@ define('ci-on-emberjs/mirage/config', ['exports'], function (exports) {
       };
     });
 
-    this.get('projects/:id', function (db, request) {
+    this.get('/projects/:id', function (db, request) {
       var projectId = request.params.id;
 
       return {
@@ -817,7 +817,7 @@ define('ci-on-emberjs/mirage/config', ['exports'], function (exports) {
       };
     });
 
-    this.get('builds', function (db, request) {
+    this.get('/builds', function (db, request) {
       var projectId = request.queryParams.project_id;
 
       return {
@@ -831,7 +831,7 @@ define('ci-on-emberjs/mirage/config', ['exports'], function (exports) {
       };
     });
 
-    this.get('builds/:id');
+    this.get('/builds/:id');
   };
 
   /*
