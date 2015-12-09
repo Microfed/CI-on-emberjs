@@ -5,5 +5,7 @@ export default Mirage.Factory.extend({
 
   title: faker.company.companyName,
   description: faker.lorem.paragraph,
-  number: (i) => i
+  number: (i) => i,
+  'commit-sha': faker.random.uuid,
+  'commit-committer-name': faker.name.findName
 });

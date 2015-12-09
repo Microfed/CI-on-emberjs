@@ -1,26 +1,30 @@
 <div class="row">
     <div class="col-md-1">
-        Changelist
+        {{attrs.build.changelist}}
     </div>
 
     <div class="col-md-1">
-        Owner
+        {{attrs.build.owner}}
+    </div>
+
+    <div class="col-md-1">
+        {{attrs.build.startedAt}}
     </div>
 
     <div class="col-md-2">
-        Unit tests
+        Build
     </div>
 
     <div class="col-md-2">
-        Functional tests
+        Unit test
     </div>
 
     <div class="col-md-2">
-        Building
+        Functional test
     </div>
 
     <div class="col-md-4">
-        Status
+        {{attrs.build.state}}
     </div>
 </div>
 

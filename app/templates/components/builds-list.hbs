@@ -2,8 +2,8 @@
 
 {{#if builds.length}}
     {{#bs-accordion selected=selected}}
-        {{#each builds as |build index|}}
-            {{builds-list-item value=index}}
+        {{#each attrs.builds as |build index|}}
+            {{builds-list-item value=index build=build}}
         {{/each}}
     {{/bs-accordion}}
 {{else}}

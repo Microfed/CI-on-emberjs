@@ -3,13 +3,13 @@
 
 <div role="tab" {{action "toggleActive"}} class="panel-heading {{if collapsed "collapsed"}}">
     <h4 class="panel-title">
-        {{builds-list-item-short build=build}}
+        {{builds-list-item-short build=attrs.build}}
     </h4>
 </div>
 
 {{#bs-collapse collapsed=collapsed class="panel-collapse"}}
     <div class="panel-body">
-        {{builds-list-item-detail build=build}}
+        {{builds-list-item-detail build=attrs.build}}
     </div>
 {{/bs-collapse}}
 
