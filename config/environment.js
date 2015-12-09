@@ -54,6 +54,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+	  ENV.baseURL = 'CI-on-emberjs';
 
   }
 
