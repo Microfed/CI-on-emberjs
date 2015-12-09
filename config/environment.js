@@ -5,7 +5,7 @@ module.exports = function (environment) {
     modulePrefix: 'ci-on-emberjs',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -55,7 +55,9 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
 	  ENV.baseURL = 'CI-on-emberjs';
-
+	  ENV['ember-cli-mirage'] = {
+		enabled: true
+	  }
   }
 
   return ENV;
