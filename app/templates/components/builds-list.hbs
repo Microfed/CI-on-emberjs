@@ -1,0 +1,12 @@
+{{yield}}
+
+{{#if builds.length}}
+    {{#bs-accordion selected=selected}}
+        {{#each attrs.builds as |build index|}}
+            {{builds-list-item value=index build=build}}
+        {{/each}}
+    {{/bs-accordion}}
+{{else}}
+    <h3>{{t 'builds-list.no-builds'}}</h3>
+{{/if}}
+

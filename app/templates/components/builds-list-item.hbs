@@ -1,11 +1,16 @@
-<div class="row">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="col-md-2">
-                {{build.number}}
-            </div>
+{{! based on bs-accordion-item from ember-bootstrap }}
+{{! see http://kaliber5.github.io/ember-bootstrap/api/classes/Components.AccordionItem.html }}
 
-            {{yield}}
-        </div>
-    </div>
+<div role="tab" {{action "toggleActive"}} class="panel-heading {{if collapsed "collapsed"}}">
+    <h4 class="panel-title">
+        {{builds-list-item-short build=attrs.build}}
+    </h4>
 </div>
+
+{{#bs-collapse collapsed=collapsed class="panel-collapse"}}
+    <div class="panel-body">
+        {{builds-list-item-detail build=attrs.build}}
+    </div>
+{{/bs-collapse}}
+
+{{yield}}

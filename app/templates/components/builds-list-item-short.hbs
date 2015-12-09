@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-1">
+        {{attrs.build.changelist}}
+    </div>
+
+    <div class="col-md-1">
+        {{attrs.build.owner}}
+    </div>
+
+    <div class="col-md-1">
+        {{attrs.build.startedAt}}
+    </div>
+
+    <div class="col-md-2">
+        Build
+    </div>
+
+    <div class="col-md-2">
+        Unit test
+    </div>
+
+    <div class="col-md-2">
+        Functional test
+    </div>
+
+    <div class="col-md-4">
+        {{attrs.build.state}}
+    </div>
+</div>
+
+{{yield}}

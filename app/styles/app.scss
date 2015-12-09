@@ -1,1 +1,12 @@
 @import "bootstrap_custom";
+
+
+// It makes the grid more pixel perfect.
+// In real case I would ask the designer to change the layout to more
+// appropriate 1200px
+@media (min-width: 1244px) {
+	.ci-container {
+		width: 1224px;
+		padding-left: 30px;
+	}
+}

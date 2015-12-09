@@ -1,4 +1,5 @@
-import Ember from 'ember';
+//import Ember from 'ember';
+import BSAccordionItem from 'ember-bootstrap/components/bs-accordion-item';
 
-export default Ember.Component.extend({
+export default BSAccordionItem.extend({
 });
