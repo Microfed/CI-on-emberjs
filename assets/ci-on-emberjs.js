@@ -5573,7 +5573,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("ci-on-emberjs/app")["default"].create({"name":"ci-on-emberjs","version":"v1.0.0"});
+  require("ci-on-emberjs/app")["default"].create({"name":"ci-on-emberjs","version":"1.0.0+ce5bc5da"});
 }
 
 /* jshint ignore:end */
