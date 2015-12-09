@@ -33,7 +33,7 @@
 	}
 
 	.build-col {
-		text-align: center;
+		text-align: left;
 		line-height: $row-height;
 		color: $text-color;
 
@@ -44,27 +44,32 @@
 
 	.build-item-short {
 		padding: 0;
+		cursor: pointer;
 
-		.build-col-time, .build-col-owner {
+		.build-col-changelist {
+			padding-left: 8px;
+		}
+
+		.build-col-time {
 			font-size: smaller;
 		}
 
-		.build-col-time .icon-time {
+		.build-col-status {
+			font-size: smaller;
+		}
+
+		.build-col-time, .build-col-owner {
 			font-size: xx-small;
 		}
 
 		.build-col-status {
-			text-align: left;
-
 			// pixel perfect
 			padding-left: 9px;
 		}
 
 		@each $state, $name in $states-icons {
 			.icon-state-#{$state} {
-				//&:before {
 				@extend .fa-#{$name};
-				//}
 
 				color: map-get($states, #{$state});
 			}

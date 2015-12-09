@@ -5,6 +5,16 @@
 	$item-border-color: #e3e3e6;
 	$border-left-default-color: #d2d2d2;
 
+	$layout-columns: (
+			changelist: 6,
+			owner: 3,
+			time: 9,
+			build: 7,
+			unit: 7,
+			func: 7,
+			status: 7
+	);
+
 	border: $container-border-color 2px solid;
 
 	.panel {
@@ -21,21 +31,17 @@
 	}
 
 	.header {
-		text-align: center;
+		text-align: left;
 		font-weight: bold;
 		height: 48px;
 
 		// pixel perfect
 		.build-col-changelist {
-			padding-left: 19px;
+			padding-left: 8px;
 		}
 
 		.build-col-owner {
 			padding-left: 12px;
-		}
-
-		.build-col-time {
-			padding-left: 6px;
 		}
 
 		.build-col-build {
@@ -47,45 +53,65 @@
 		}
 
 		.build-col-func {
-			padding-left: 20px;
+			padding-left: 10px;
 		}
 
 		.build-col-status {
 			padding-left: 11px;
-			text-align: left;
 		}
 	}
 
 	.build-col-changelist {
-		@include make-lg-column(8);
+		@include make-lg-column(map-get($layout-columns, changelist));
 	}
 
 	.build-col-owner {
-		@include make-lg-column(3);
+		@include make-lg-column(map-get($layout-columns, owner));
 	}
 
 	.build-col-time {
-		@include make-lg-column(12);
+		@include make-lg-column(map_get($layout-columns, time));
 	}
 
 	.build-col-build {
-		@include make-lg-column(7);
+		@include make-lg-column(map_get($layout-columns, build));
 	}
 
 	.build-col-unit {
-		@include make-lg-column(9);
+		@include make-lg-column(map_get($layout-columns, unit));
 	}
 
 	.build-col-func {
-		@include make-lg-column(8);
-	}
-
-	.build-col-spacer {
-		@include make-lg-column(2);
+		@include make-lg-column(map_get($layout-columns, func));
 	}
 
 	.build-col-status {
-		@include make-lg-column(7);
+		@include make-lg-column(map_get($layout-columns, status));
+	}
+
+	.build-col-progress {
+		@include make-lg-column(map_get($layout-columns, build)
+				+ map_get($layout-columns, unit)
+				+ map_get($layout-columns, func)
+		);
+	}
+
+	@mixin spacer($columns) {
+		@include make-lg-column($columns);
+		min-height: 20px;
+		padding: 0;
+	}
+
+	.build-col-little-spacer {
+		@include spacer(1);
+	}
+
+	.build-col-spacer {
+		@include spacer(2);
+	}
+
+	.build-col-big-spacer {
+		@include spacer(3);
 	}
 }
 

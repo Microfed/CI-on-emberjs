@@ -1,4 +1,6 @@
 <div class="build-list-item-properties">
+    <div class="build-col build-col-spacer"></div>
+
     <div class="build-col build-col-changelist">
         {{attrs.build.changelist}}
     </div>
@@ -7,6 +9,8 @@
         {{attrs.build.owner}}
     </div>
 
+    <div class="build-col build-col-big-spacer"></div>
+
     <div class="build-col build-col-time">
         {{moment-format attrs.build.startedAt 'MM / DD / YYYY'}}
         &nbsp;
@@ -14,19 +18,13 @@
         {{moment-format attrs.build.startedAt 'hh:mm a'}}
     </div>
 
-    <div class="build-col build-col-build">
-        Build
-    </div>
-
-    <div class="build-col build-col-unit">
-        Unit test
-    </div>
-
-    <div class="build-col build-col-func">
-        Functional test
-    </div>
-
     <div class="build-col build-col-spacer"></div>
+
+    <div class="build-col build-col-progress">
+        {{progress-with-steps progress=buildProgress}}
+    </div>
+
+    <div class="build-col build-col-little-spacer"></div>
 
     <div class="build-col build-col-status">
         {{fa-icon spin=attrs.isInActiveState class=(concat 'icon-state-' attrs.buildState)}}

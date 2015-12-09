@@ -22,5 +22,28 @@ export default BSAccordionItem.extend({
 
   isInActiveState: cp(['build.state', 'activeStates'], function () {
     return this.get('activeStates').contains(this.get('build.state'));
+  }),
+
+  buildProgress: cp('build.state', function () {
+    return [
+      {
+        index: 0,
+        state: 1,
+        done: 10,
+        total: 100
+      },
+      {
+        index: 1,
+        state: 0,
+        done: 0,
+        total: 100
+      },
+      {
+        index: 2,
+        state: 0,
+        done: 0,
+        total: 100
+      }
+    ];
   })
 });
