@@ -55,7 +55,9 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
 	  ENV.baseURL = 'CI-on-emberjs';
-
+	  ENV['ember-cli-mirage'] = {
+		enabled: true
+	  }
   }
 
   return ENV;
