@@ -23,8 +23,36 @@
 	.header {
 		text-align: center;
 		font-weight: bold;
-		//border-bottom: $item-border-color 1px solid;
+		height: 48px;
 
+		// pixel perfect
+		.build-col-changelist {
+			padding-left: 19px;
+		}
+
+		.build-col-owner {
+			padding-left: 12px;
+		}
+
+		.build-col-time {
+			padding-left: 6px;
+		}
+
+		.build-col-build {
+			padding-left: 12px;
+		}
+
+		.build-col-unit {
+			padding-left: 29px;
+		}
+
+		.build-col-func {
+			padding-left: 12px;
+		}
+
+		.build-col-status {
+			padding-left: 17px;
+		}
 	}
 
 	.build-col-changelist {

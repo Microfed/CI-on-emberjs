@@ -3,6 +3,8 @@
 	$running-color: #1c84c6;
 	$passed-color: #1ab394;
 	$failed-color: #ed5565;
+	$text-color: #7c7c7c;
+	$row-height: 63px;
 
 	&.pending {
 		border-left-color: $pending-color;
@@ -18,5 +20,26 @@
 
 	&.failed {
 		border-left-color: $failed-color;
+	}
+
+	.build-col {
+		text-align: center;
+		line-height: $row-height;
+		color: $text-color;
+
+		.changelist {
+			font-weight: bolder;
+		}
+	}
+
+	.build-item-short {
+		padding: 0;
+	}
+
+	.build-list-item-properties {
+		@include make-row();
+
+		min-height: $row-height;
+		margin: 0;
 	}
 }

@@ -1,7 +1,8 @@
 {{! based on bs-accordion-item from ember-bootstrap }}
 {{! see http://kaliber5.github.io/ember-bootstrap/api/classes/Components.AccordionItem.html }}
 
-<div role="tab" {{action "toggleActive"}} class="panel-heading {{if collapsed "collapsed"}}">
+<div role="tab" {{action "toggleActive"}}
+     class="panel-heading {{if collapsed "collapsed"}} build-item-short">
     <h4 class="panel-title">
         {{builds-list-item-short build=attrs.build}}
     </h4>

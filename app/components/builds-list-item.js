@@ -11,7 +11,8 @@ export default BSAccordionItem.extend({
 
   buildState: cp(['build.state', 'config.states'], function () {
     let config = this.get('config');
+    let state = this.get('attrs.build.value.state');
 
-    return config.getStateString(this.attrs.build.value.get('state'));
+    return config.getStateString(state);
   })
 });

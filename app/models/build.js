@@ -12,10 +12,10 @@ export default DS.Model.extend(StateWithDuration, {
   number: DS.attr(),
 
   // optimized payload - no need to fetch every commit to display build item
-  commitSha: DS.attr(),
+  //commitSha: DS.attr(),
   commitCommitterName: DS.attr(),
 
-  changelist: cp.reads('commitSha'),
+  changelist: cp.reads('number'),
   owner: cp.reads('commitCommitterName'),
   startedAt: cp(function () {
     let buildJob = this.get('jobs').findBy('type', 'build');
