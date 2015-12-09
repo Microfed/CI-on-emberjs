@@ -73,7 +73,7 @@ export default function () {
 
   */
 
-  this.namespace = '/CI-on-emberjs/
+  this.namespace = '/CI-on-emberjs/';
 
   this.get('/projects', function (db) {
     return {
