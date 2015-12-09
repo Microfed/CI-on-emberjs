@@ -8,7 +8,10 @@
     </div>
 
     <div class="build-col build-col-time">
-        {{attrs.build.startedAt}}
+        {{moment-format attrs.build.startedAt 'MM / DD / YYYY'}}
+        &nbsp;
+        {{fa-icon 'clock-o'}}
+        {{moment-format attrs.build.startedAt 'hh:mm a'}}
     </div>
 
     <div class="build-col build-col-build">
@@ -23,8 +26,13 @@
         Functional test
     </div>
 
+    <div class="build-col build-col-spacer"></div>
+
     <div class="build-col build-col-status">
-        {{attrs.build.state}}
+        {{fa-icon spin=attrs.isInActiveState class=(concat 'icon-state-' attrs.buildState)}}
+        <span class="state-title">
+            {{state-title attrs.build.state}}
+        </span>
     </div>
 </div>
 

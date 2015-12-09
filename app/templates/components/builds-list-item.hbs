@@ -4,7 +4,7 @@
 <div role="tab" {{action "toggleActive"}}
      class="panel-heading {{if collapsed "collapsed"}} build-item-short">
     <h4 class="panel-title">
-        {{builds-list-item-short build=attrs.build}}
+        {{builds-list-item-short build=attrs.build buildState=buildState isInActiveState=isInActiveState}}
     </h4>
 </div>
 

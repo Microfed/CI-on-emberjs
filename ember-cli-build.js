@@ -12,6 +12,10 @@ module.exports = function (defaults) {
       'importBootstrapCSS': false,
       'importBootstrapFont': false,
       'importBootstrapTheme': false
+    },
+
+    emberCliFontAwesome: {
+      useScss: true
     }
   });
 

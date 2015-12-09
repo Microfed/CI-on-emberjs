@@ -9,10 +9,18 @@ export default BSAccordionItem.extend({
 
   config: Ember.inject.service(),
 
+  pendingState: cp.reads('config.states.pending'),
+  runningState: cp.reads('config.states.running'),
+  activeStates: cp.collect('pendingState', 'runningState'),
+
   buildState: cp(['build.state', 'config.states'], function () {
     let config = this.get('config');
     let state = this.get('attrs.build.value.state');
 
     return config.getStateString(state);
+  }),
+
+  isInActiveState: cp(['build.state', 'activeStates'], function () {
+    return this.get('activeStates').contains(this.get('build.state'));
   })
 });

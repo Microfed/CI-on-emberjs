@@ -16,11 +16,11 @@ export default DS.Model.extend(StateWithDuration, {
   commitCommitterName: DS.attr(),
 
   changelist: cp.reads('number'),
-  owner: cp.reads('commitCommitterName'),
-  startedAt: cp(function () {
-    let buildJob = this.get('jobs').findBy('type', 'build');
-
-    // TODO: get unknown from i18n
-    return buildJob ? buildJob.get('startedAt') : 'unknown';
-  })
+  owner: cp.reads('commitCommitterName')
+  //startedAt: cp(function () {
+  //  let buildJob = this.get('jobs').findBy('type', 'build');
+  //
+  //  // TODO: get unknown from i18n
+  //  return buildJob ? buildJob.get('startedAt') : 'unknown';
+  //})
 });

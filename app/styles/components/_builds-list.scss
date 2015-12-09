@@ -47,11 +47,12 @@
 		}
 
 		.build-col-func {
-			padding-left: 12px;
+			padding-left: 20px;
 		}
 
 		.build-col-status {
-			padding-left: 17px;
+			padding-left: 11px;
+			text-align: left;
 		}
 	}
 
@@ -76,11 +77,15 @@
 	}
 
 	.build-col-func {
-		@include make-lg-column(9);
+		@include make-lg-column(8);
+	}
+
+	.build-col-spacer {
+		@include make-lg-column(2);
 	}
 
 	.build-col-status {
-		@include make-lg-column(5);
+		@include make-lg-column(7);
 	}
 }
 

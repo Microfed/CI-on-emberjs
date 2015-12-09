@@ -1,25 +1,35 @@
 .builds-list-item {
-	$pending-color: #f8ac59;
-	$running-color: #1c84c6;
-	$passed-color: #1ab394;
-	$failed-color: #ed5565;
+	$states: (
+			pending: #f8ac59,
+			running: #1c84c6,
+			passed: #1ab394,
+			failed: #ed5565
+	);
+
+	$states-icons: (
+			pending: 'spinner',
+			running: 'refresh',
+			passed: 'check-circle-o',
+			failed: 'times-circle-o'
+	);
+
 	$text-color: #7c7c7c;
 	$row-height: 63px;
 
 	&.pending {
-		border-left-color: $pending-color;
+		border-left-color: map-get($states, pending);
 	}
 
 	&.running {
-		border-left-color: $running-color;
+		border-left-color: map-get($states, running);
 	}
 
 	&.passed {
-		border-left-color: $passed-color;
+		border-left-color: map-get($states, passed);
 	}
 
 	&.failed {
-		border-left-color: $failed-color;
+		border-left-color: map-get($states, failed);
 	}
 
 	.build-col {
@@ -34,6 +44,39 @@
 
 	.build-item-short {
 		padding: 0;
+
+		.build-col-time, .build-col-owner {
+			font-size: smaller;
+		}
+
+		.build-col-time .icon-time {
+			font-size: xx-small;
+		}
+
+		.build-col-status {
+			text-align: left;
+
+			// pixel perfect
+			padding-left: 9px;
+		}
+
+		@each $state, $name in $states-icons {
+			.icon-state-#{$state} {
+				//&:before {
+				@extend .fa-#{$name};
+				//}
+
+				color: map-get($states, #{$state});
+			}
+		}
+	}
+
+	@each $state, $color in $states {
+		&.#{$state} {
+			.state-title {
+				color: $color;
+			}
+		}
 	}
 
 	.build-list-item-properties {
