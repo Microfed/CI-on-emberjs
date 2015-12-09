@@ -73,7 +73,7 @@ export default function () {
 
   */
 
-  this.get('projects', function (db) {
+  this.get('/projects', function (db) {
     return {
       data: db.projects.map(attrs => ({
         type: 'project',
@@ -83,7 +83,7 @@ export default function () {
     };
   });
 
-  this.get('projects/:id', function (db, request) {
+  this.get('/projects/:id', function (db, request) {
     var projectId = request.params.id;
 
     return {
@@ -95,7 +95,7 @@ export default function () {
     };
   });
 
-  this.get('builds', function (db, request) {
+  this.get('/builds', function (db, request) {
     var projectId = request.queryParams.project_id;
 
     return {
@@ -107,7 +107,7 @@ export default function () {
     };
   });
 
-  this.get('builds/:id');
+  this.get('/builds/:id');
 }
 
 /*
